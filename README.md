@@ -51,19 +51,20 @@ The core computational contribution of this architecture is a multi-headed cross
 
 ---
 
-## 4. Hardware & Software Requirements
+## 4.## 🌐 Hyperscale Cloud Infrastructure and AI Deployment Architecture
 
-### Hardware Requirements
-* **GPU:** Minimum 1x NVIDIA A100 or H100 Tensor Core GPU (80GB VRAM) for concurrent LLM inference and vision transformer operations.
-* **RAM:** 128 GB System Memory.
-* **Storage:** 2 TB NVMe Solid State Drive (SSD) for continuous high-definition video frame processing.
+The production-grade execution graph of this tri-vector cross-attention network is engineered to bypass localized compute bottlenecks by utilizing a fully decoupled, cloud-native distributed architecture. The processing pipeline can be deployed natively across enterprise cloud nodes (AWS, GCP, or Azure) to manage high-throughput, multi-rate ingestion arrays.
 
-### Software Dependencies
-* **Core Stack:** Python 3.10+, PyTorch (v2.0+) with CUDA acceleration.
-* **NLP Modules:** Hugging Face Transformers, spaCy, OpenAI Whisper API.
-* **Computer Vision:** MediaPipe FaceMesh, OpenCV, PyTorchVideo.
-* **Biosignal Analysis:** MNE-Python.
+### Hardware Infrastructure & Compute Allocation
+*   **GPU Acceleration Tier:** Distributed clusters leveraging minimum 1x NVIDIA A100 or H100 Tensor Core GPU (80GB VRAM) to support multi-user batch transformer inference.
+*   **Host Allocation:** 128 GB System RAM minimum configuration to prevent buffer overflows during large, parallel tensor data processing loops.
+*   **High-Throughput IO:** 2 TB NVMe Solid State Drive (SSD) via PCIe Gen 4 to prevent pipeline stalling during simultaneous frame extraction loops.
 
+### Serving Stack & Containerized Microservices
+*   **Container Isolation via Docker:** Each standalone module—`text_encoder.py` (Phase A), `vision_encoder.py` (Phase B), and `eeg_processor.py` (Phase C)—is isolated into localized Docker microservices to ensure complete cross-environment reliability and error isolation.
+*   **Orchestration via Kubernetes:** Production pods are orchestrated using centralized Kubernetes configurations utilizing Horizontal Pod Autoscaling (HPA) targets to scale compute assets dynamically based on active clinical intake volume.
+*   **High-Performance Serving via NVIDIA Triton:** Model inference and execution grids are served through the **NVIDIA Triton Inference Server**. Triton manages concurrent execution paths and enforces Dynamic Batching across multi-GPU nodes to compute the batch *Incongruity Index* with near-zero latency.
+*   **Serverless Ingestion Layer:** The entire PyTorch deep learning backend is exposed via a high-performance, lightweight **gRPC and RESTful API**. Local research stations and clinical facilities can securely stream raw session assets (e.g., standard digital `.edf` or BrainVision files) over an encrypted web hook to receive instantaneous score calculations without requiring local high-performance hardware.
 ---
 
 ## 5. Targeted Evaluation Metrics
