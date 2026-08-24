@@ -24,7 +24,7 @@ This framework introduces a novel multimodal computational approach designed to 
 
 The core computational contribution of this architecture is a multi-headed cross-attention network that ingests all three normalized vectors to measure their alignment and output the final index score:
 
-\[\text{Incongruity Index} = f(V_{\text{text}}, V_{\text{video}}, V_{\text{eeg}})\]
+Incongruity Index"_(batch) = f ( V_(text) ,V_(video) ,V_(eeg) )
 
 * **Psychopathic Masking Flag:** Triggered when \(V_{\text{text}}\) signals a high-intensity emotional narrative but \(V_{\text{video}}\) outputs an unmodulated, flat affective baseline alongside an unreactive, detached \(V_{\text{eeg}}\) profile.
 * **Neuro-Metabolic Calibration:** Triggered when \(V_{\text{text}}\) displays syntax degradation and cognitive memory load stalls, paired with distinct computer vision fatigue tells and matching, reactive shifts in the EEG Theta/Beta spectrum.
